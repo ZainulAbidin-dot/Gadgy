@@ -1,0 +1,75 @@
+.cardbox {
+  position: relative;
+  width: 320px;
+  height: 420px;
+  background: hsl(43, 98%, 30%);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.cardbox::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: hsl(43, 90%, 40%);
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+.cardbox:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+.cardbox .imgbox {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+  transition: height 0.5s ease;
+}
+.cardbox .imgbox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 0.5s;
+}
+.cardbox:hover .imgbox {
+  height: 50%;
+}
+.cardbox:hover .imgbox img {
+  width: 70%;
+}
+.cardbox .contentbox {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.cardbox .contentbox h1 {
+  font-size: 1.75rem;
+  color: aliceblue;
+}
+.cardbox .contentbox p {
+  font-size: 1.1rem;
+  color: aliceblue;
+}
+.cardbox .contentbox .button {
+  background: hsl(43, 90%, 40%);
+  padding: 10px 20px;
+  border-radius: 40px;
+  color: aliceblue;
+  top: 200px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.cardbox:hover .contentbox .button {
+  top: 0px;
+  opacity: 1;
+}
